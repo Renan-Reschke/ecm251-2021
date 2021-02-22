@@ -2,7 +2,7 @@
 Repositório criado para gerenciar os projetos e aulas de Linguagens I.
 
 # Desenvolvedor:
-## Renan Scheidt Reschke
+- Renan Scheidt Reschke
 
 # Principais Linguagens:
 - Java
