@@ -2,7 +2,7 @@ package reschke.scheidt.renan;
 
 public class Conta {
     //Atributos
-    String titular, cpf;
+    Cliente cliente = new Cliente();
     double saldo;
     int numero;
 
