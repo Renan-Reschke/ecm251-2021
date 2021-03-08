@@ -29,6 +29,15 @@ public class Conta {
 
     void visualizarSaldo(){
         System.out.println(String.format("Saldo = R$%.2f", this.saldo).replace('.', ','));
+    }
 
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "cliente=" + cliente.toString() +
+                ", saldo=" + saldo +
+                ", numero=" + numero +
+                '}';
     }
 }
+
