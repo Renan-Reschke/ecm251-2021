@@ -7,19 +7,28 @@ public class Conta {
     int numero;
 
     //Métodos da classe
-    void depositar(){
-
+    void depositar(double valor){
+        this.saldo += valor;
     }
 
-    void sacar(){
-
+    boolean sacar(double valor){
+        if (valor <= this.saldo){
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
     }
 
-    void transferirDinheiro(){
-
+    boolean transferirDinheiro(double valor, Conta destino){
+        if (this.sacar(valor)) {
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
     }
 
     void visualizarSaldo(){
-        System.out.println("Saldo = R$" + this.saldo);
+        System.out.println(String.format("Saldo = R$%.2f", this.saldo).replace('.', ','));
+
     }
 }
