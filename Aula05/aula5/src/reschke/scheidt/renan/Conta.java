@@ -2,31 +2,31 @@ package reschke.scheidt.renan;
 
 public class Conta {
     //Atributos
-    Cliente cliente = new Cliente();
-    double saldo;
-    int numero;
+    private Cliente cliente = new Cliente();
+    private double saldo;
+    private int numero;
 
     //Métodos da classe
-    void depositar(double valor){
+    public void depositar(double valor){
         this.saldo += valor;
     }
 
-    boolean sacar(double valor){
+    public boolean sacar(double valor){
         if (valor <= this.saldo){
             this.saldo -= valor;
             return true;
         } return false;
     }
 
-    boolean transferirDinheiro(double valor, Conta destino){
+    public boolean transferirDinheiro(double valor, Conta destino){
         if (this.sacar(valor)) {
             destino.depositar(valor);
             return true;
         } return false;
     }
 
-    void visualizarSaldo(){
-        System.out.println(String.format("Saldo = R$%.2f", this.saldo).replace('.', ','));
+    public double visualizarSaldo(){
+        return this.saldo;
     }
 
     @Override
