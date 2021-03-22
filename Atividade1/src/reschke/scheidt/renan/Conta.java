@@ -15,13 +15,14 @@ public class Conta {
     private int idConta;
     private double saldo;
     private Usuario usuario;
+    private static int qntContas = 0;
 
     //Construtor
     public Conta(Usuario usuario, double saldoInicial){
         this.usuario = usuario;
         this.saldo = saldoInicial;
-        listaDeContas.qntContas += 1;
-        this.idConta = listaDeContas.qntContas;
+        this.qntContas += 1;
+        this.idConta = this.qntContas;
     }
 
     //Getters
