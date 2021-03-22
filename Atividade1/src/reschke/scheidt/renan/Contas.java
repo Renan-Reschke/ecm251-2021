@@ -28,6 +28,11 @@ public class Contas {
         return usuario;
     }
 
+    //Métodos de Classe
+    public static String formatarSaldo(double getSaldo) {       //Formata o salde de double para XXXX,XX
+        return String.format("%.2f", getSaldo).replace('.', ',');
+    }
+
     //toString - Retorna as informações do objeto como string
     @Override
     public String toString() {
