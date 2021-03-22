@@ -11,7 +11,12 @@ public class listaDeContas {
 
     //Atributos
     private static int qntContas = 0;                //Contabiliza a quantidade de contas existentes
-    public static Conta[] contas = new Conta[0];    //Responsável por armazenar as contas
+    private static Conta[] contas = new Conta[0];    //Responsável por armazenar as contas
+
+    //Getter
+    public static Conta getConta(int idConta){
+        return contas[idConta - 1];
+    }
 
     //Métodos de classe
     public static void addConta(Conta conta){

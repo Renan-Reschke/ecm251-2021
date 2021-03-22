@@ -46,10 +46,10 @@ public class Conta {
     public boolean pagar(String QRCode){
         String[] dados = QRCode.split(";");
         if(this.saldo >= Double.parseDouble(dados[2])){                                                         //Verifica se o saldo do pagador é suficiente para pagar
-            if(listaDeContas.contas[Integer.parseInt(dados[0])-1].idConta == Integer.parseInt(dados[0])         //Verificação da validade da conta de destino
-                    && listaDeContas.contas[Integer.parseInt(dados[0])-1].usuario.getNome().equals(dados[1])) {
+            if(listaDeContas.getConta(Integer.parseInt(dados[0])).idConta == Integer.parseInt(dados[0])         //Verificação da validade da conta de destino
+                    && listaDeContas.getConta(Integer.parseInt(dados[0])).usuario.getNome().equals(dados[1])) {
                 this.saldo -= Double.parseDouble(dados[2]);                                                     //Faz a dedução do valor pago da conta do pagador
-                listaDeContas.contas[Integer.parseInt(dados[0]) - 1].saldo += Double.parseDouble(dados[2]);     //Adiciona os fundo na conta destino
+                listaDeContas.getConta(Integer.parseInt(dados[0])).saldo += Double.parseDouble(dados[2]);     //Adiciona os fundo na conta destino
             } else {return false;}
             return true;
         } return false;
