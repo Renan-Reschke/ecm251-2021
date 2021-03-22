@@ -32,11 +32,11 @@ public class Main {
 
         //Operações de teste
         String QRCode1 = Transacoes.qrCode(c1, 250);
-        if(c2.pagar(QRCode1));
-        if(c3.pagar(QRCode1));
-        if(c2.pagar(QRCode1));
+        c2.pagar(QRCode1);
+        c3.pagar(QRCode1);
+        c2.pagar(QRCode1);
         String QRCode2 = Transacoes.qrCode(c2, 1000);
-        if(c3.pagar(QRCode2));
+        c3.pagar(QRCode2);
 
         //Verificação do estado FINAL - OK
         System.out.println("Estado final:");
