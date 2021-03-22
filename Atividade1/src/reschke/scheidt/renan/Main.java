@@ -16,9 +16,9 @@ public class Main {
 
         //Verificação do estado inicial - OK
         System.out.println("Estado inicial:");
-        System.out.println("Nome usuário: " + u1.getNome() + " - Saldo: " + c1.getSaldoFormatado());
-        System.out.println("Nome usuário: " + u2.getNome() + " - Saldo: " + c2.getSaldoFormatado());
-        System.out.println("Nome usuário: " + u3.getNome() + " - Saldo: " + c3.getSaldoFormatado());
+        System.out.println("Nome usuário: " + u1.getNome() + " - Saldo: " + Sistema.formatarSaldo(c1.getSaldo()));
+        System.out.println("Nome usuário: " + u2.getNome() + " - Saldo: " + Sistema.formatarSaldo(c2.getSaldo()));
+        System.out.println("Nome usuário: " + u3.getNome() + " - Saldo: " + Sistema.formatarSaldo(c3.getSaldo()));
 
     }
 }

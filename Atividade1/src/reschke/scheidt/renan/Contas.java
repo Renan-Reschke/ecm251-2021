@@ -16,10 +16,6 @@ public class Contas {
     }
 
     //Getters
-    public String getSaldoFormatado() {
-        return String.format("%.2f", this.saldo).replace('.', ',');
-    }
-
     public int getIdConta() {           //Retorna o id da conta
         return idConta;
     }
