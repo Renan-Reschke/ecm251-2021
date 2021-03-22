@@ -1,3 +1,4 @@
+//19.02009-0 Renan Scheidt Reschke
 package reschke.scheidt.renan;
 
 public class Contas {
@@ -6,7 +7,9 @@ public class Contas {
     private static int qntContas = 0;
     private double saldo;
     private Usuarios usuario;
+    private static Contas[] listaDeContas;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Construtor
     public Contas(Usuarios usuario, double saldoInicial){
         this.usuario = usuario;
@@ -15,6 +18,7 @@ public class Contas {
         this.idConta = qntContas;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Getters
     public int getIdConta() {           //Retorna o id da conta
         return idConta;
@@ -28,11 +32,22 @@ public class Contas {
         return usuario;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Métodos de Classe
     public static String formatarSaldo(double getSaldo) {       //Formata o salde de double para XXXX,XX
         return String.format("%.2f", getSaldo).replace('.', ',');
     }
 
+    public boolean pagar(Transacoes QRCode){
+        String s = QRCode;
+        String[] dados = s.split(";");
+        Contas destinatario = Objc
+        if(this.saldo >= Double.parseDouble(dados[2])){
+            this.saldo -= Double.parseDouble(dados[2]);
+
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //toString - Retorna as informações do objeto como string
     @Override
     public String toString() {
