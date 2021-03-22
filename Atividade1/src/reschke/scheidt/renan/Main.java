@@ -14,11 +14,18 @@ public class Main {
         Contas c2 = new Contas(u2,250.0);
         Contas c3 = new Contas(u3,3000.0);
 
-        //Verificação do estado inicial - OK
+        //Verificação do estado INICIAL - OK
         System.out.println("Estado inicial:");
-        System.out.println("Nome usuário: " + u1.getNome() + " - Saldo: " + Sistema.formatarSaldo(c1.getSaldo()));
-        System.out.println("Nome usuário: " + u2.getNome() + " - Saldo: " + Sistema.formatarSaldo(c2.getSaldo()));
-        System.out.println("Nome usuário: " + u3.getNome() + " - Saldo: " + Sistema.formatarSaldo(c3.getSaldo()));
+        System.out.println("Nome usuário: " + c1.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c1.getSaldo()));
+        System.out.println("Nome usuário: " + c2.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c2.getSaldo()));
+        System.out.println("Nome usuário: " + c3.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c3.getSaldo()));
 
+        //Operações de teste
+
+        //Verificação do estado FINAL
+        System.out.println("Estado final:");
+        System.out.println("Nome usuário: " + c1.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c1.getSaldo()));
+        System.out.println("Nome usuário: " + c2.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c2.getSaldo()));
+        System.out.println("Nome usuário: " + c3.getUsuario().getNome() + " - Saldo: " + Sistema.formatarSaldo(c3.getSaldo()));
     }
 }
