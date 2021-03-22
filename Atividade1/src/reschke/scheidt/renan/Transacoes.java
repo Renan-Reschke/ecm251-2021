@@ -12,11 +12,11 @@ public class Transacoes {
     }
 
     //Método para gerar a String QRCode
-    private static String QRCode(Contas destinatario, double valor){
+    public static String qrCode(Contas destinatario, double valor){
         return String.format(destinatario.getIdConta() + ";" +
                 destinatario.getUsuario().getNome() + ";" +
                 valor + ";" +
-                getRandomNumberInRange(1000,9999))
+                getRandomNumberInRange(1000,9999));
     }
 
 }

@@ -38,14 +38,14 @@ public class Contas {
         return String.format("%.2f", getSaldo).replace('.', ',');
     }
 
-    public boolean pagar(Transacoes QRCode){
-        String s = QRCode;
-        String[] dados = s.split(";");
-        Contas destinatario = Objc
+    public boolean pagar(String QRCode){
+        String[] dados = QRCode.split(";");
+        Contas destinatario;
         if(this.saldo >= Double.parseDouble(dados[2])){
             this.saldo -= Double.parseDouble(dados[2]);
-
-        }
+            //add saldo ao destino - como?
+            return true;
+        } return false;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //toString - Retorna as informações do objeto como string

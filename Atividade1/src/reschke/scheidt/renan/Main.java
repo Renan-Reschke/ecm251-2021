@@ -21,6 +21,12 @@ public class Main {
         System.out.println("Nome usuário: " + c3.getUsuario().getNome() + " - Saldo: " + Contas.formatarSaldo(c3.getSaldo()));
 
         //Operações de teste
+        String QRCode1 = Transacoes.qrCode(c1, 250);
+        c2.pagar(QRCode1);
+        c3.pagar(QRCode1);
+        c2.pagar(QRCode1);
+        String QRCode2 = Transacoes.qrCode(c2, 1000);
+        c3.pagar(QRCode2);
 
         //Verificação do estado FINAL
         System.out.println("Estado final:");
