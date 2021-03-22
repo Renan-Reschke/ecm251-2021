@@ -8,13 +8,37 @@ public class Contas {
     private Usuarios usuario;
 
     //Construtor
-    public Contas(Usuarios usuario){
+    public Contas(Usuarios usuario, double saldoInicial){
         this.usuario = usuario;
-        this.saldo = 0.00;
+        this.saldo = saldoInicial;
         this.qntContas += 1;
         this.idConta = qntContas;
     }
-    public void verificarIdConta(){
-        System.out.println("id: "+ this.idConta);
+
+    //Getters
+    public String getSaldoFormatado() {
+        return String.format("%.2f", this.saldo).replace('.', ',');
+    }
+
+    public int getIdConta() {           //Retorna o id da conta
+        return idConta;
+    }
+
+    public double getSaldo() {          //Retorna o saldo da conta (double)
+        return saldo;
+    }
+
+    public Usuarios getUsuario() {      //Retorna o usuário dono da conta
+        return usuario;
+    }
+
+    //toString - Retorna as informações do objeto como string
+    @Override
+    public String toString() {
+        return "Contas{" +
+                "idConta=" + idConta +
+                ", saldo=" + saldo +
+                ", usuario=" + usuario +
+                '}';
     }
 }
