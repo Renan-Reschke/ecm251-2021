@@ -1,21 +1,21 @@
 //19.02009-0 Renan Scheidt Reschke
 package reschke.scheidt.renan;
 
-public class Contas {
+import java.util.Objects;
+
+public class Conta {
     //Atributos
     private int idConta;
-    private static int qntContas = 0;
     private double saldo;
-    private Usuarios usuario;
-    private static Contas[] listaDeContas;
+    private Usuario usuario;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Construtor
-    public Contas(Usuarios usuario, double saldoInicial){
+    public Conta(Usuario usuario, double saldoInicial){
         this.usuario = usuario;
         this.saldo = saldoInicial;
-        this.qntContas += 1;
-        this.idConta = qntContas;
+        listaDeContas.qntContas += 1;
+        this.idConta = listaDeContas.qntContas;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,7 +28,7 @@ public class Contas {
         return saldo;
     }
 
-    public Usuarios getUsuario() {      //Retorna o usuário dono da conta
+    public Usuario getUsuario() {      //Retorna o usuário dono da conta
         return usuario;
     }
 
@@ -40,7 +40,7 @@ public class Contas {
 
     public boolean pagar(String QRCode){
         String[] dados = QRCode.split(";");
-        Contas destinatario;
+        Conta destinatario;
         if(this.saldo >= Double.parseDouble(dados[2])){
             this.saldo -= Double.parseDouble(dados[2]);
             //add saldo ao destino - como?
@@ -57,4 +57,21 @@ public class Contas {
                 ", usuario=" + usuario +
                 '}';
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //hashCode e equals
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Conta)) return false;
+        Conta conta = (Conta) obj;
+        return idConta == conta.idConta && usuario.equals(conta.usuario);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idConta, usuario);
+    }
 }
+

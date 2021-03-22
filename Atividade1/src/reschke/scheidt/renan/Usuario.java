@@ -1,7 +1,9 @@
 //19.02009-0 Renan Scheidt Reschke
 package reschke.scheidt.renan;
 
-public class Usuarios {
+import java.util.Objects;
+
+public class Usuario {
     //Atributos
     private String nome;
     private String senha;
@@ -9,7 +11,7 @@ public class Usuarios {
     private static int qntUsuarios = 0;
 
     //Construtor
-    public Usuarios(String nome, String senha, String email){
+    public Usuario(String nome, String senha, String email){
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -33,5 +35,20 @@ public class Usuarios {
                 ", senha='" + senha + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //hashCode e equals
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usuario)) return false;
+        Usuario usuario = (Usuario) o;
+        return nome.equals(usuario.nome) && email.equals(usuario.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, email);
     }
 }
