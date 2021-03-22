@@ -1,4 +1,10 @@
-//19.02009-0 Renan Scheidt Reschke
+/**
+ *
+ *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
+ *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
+ *
+ */
+
 package reschke.scheidt.renan;
 
 import java.util.Objects;
@@ -19,36 +25,20 @@ public class Usuario {
     }
 
     //Getters
-    public String getNome(){                                            //Retorna o nome do usuário
+    public String getNome(){        //Retorna o nome do usuário
         return this.nome;
     }
 
-    public String getEmail() {                                          //Retorna o email do Usuário
+    public String getEmail() {      //Retorna o email do Usuário
         return email;
     }
 
-    //toString - Retorna as informações do objeto como string
     @Override
-    public String toString() {
+    public String toString() { //Retorna as informações do objeto como string
         return "Usuarios{" +
                 "nome='" + nome + '\'' +
                 ", senha='" + senha + '\'' +
                 ", email='" + email + '\'' +
                 '}';
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //hashCode e equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Usuario)) return false;
-        Usuario usuario = (Usuario) o;
-        return nome.equals(usuario.nome) && email.equals(usuario.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, email);
     }
 }

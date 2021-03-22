@@ -1,15 +1,21 @@
-//19.02009-0 Renan Scheidt Reschke
+/**
+ *
+ *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
+ *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
+ *
+ */
+
 package reschke.scheidt.renan;
 
 import java.util.Objects;
 
 public class Conta {
+
     //Atributos
     private int idConta;
     private double saldo;
     private Usuario usuario;
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Construtor
     public Conta(Usuario usuario, double saldoInicial){
         this.usuario = usuario;
@@ -18,7 +24,6 @@ public class Conta {
         this.idConta = listaDeContas.qntContas;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Getters
     public int getIdConta() {           //Retorna o id da conta
         return idConta;
@@ -32,46 +37,30 @@ public class Conta {
         return usuario;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Métodos de Classe
-    public static String formatarSaldo(double getSaldo) {       //Formata o salde de double para XXXX,XX
+    public static String formatarSaldo(double getSaldo) {                           //Formata o sald0 de double para "XXXX,XX"
         return String.format("%.2f", getSaldo).replace('.', ',');
     }
 
     public boolean pagar(String QRCode){
         String[] dados = QRCode.split(";");
-        Conta destinatario;
-        if(this.saldo >= Double.parseDouble(dados[2])){
-            this.saldo -= Double.parseDouble(dados[2]);
-            listaDeContas.contas[Integer.parseInt(dados[0])-1].saldo += Double.parseDouble(dados[2]);
+        if(this.saldo >= Double.parseDouble(dados[2])){                                                         //Verifica se o saldo do pagador é suficiente para pagar
+            if(listaDeContas.contas[Integer.parseInt(dados[0])-1].idConta == Integer.parseInt(dados[0])         //Verificação da validade da conta de destino
+                    && listaDeContas.contas[Integer.parseInt(dados[0])-1].usuario.getNome().equals(dados[1])) {
+                this.saldo -= Double.parseDouble(dados[2]);                                                     //Faz a dedução do valor pago da conta do pagador
+                listaDeContas.contas[Integer.parseInt(dados[0]) - 1].saldo += Double.parseDouble(dados[2]);     //Adiciona os fundo na conta destino
+            } else {return false;}
             return true;
         } return false;
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //toString - Retorna as informações do objeto como string
+
     @Override
-    public String toString() {
+    public String toString() {          //Retorna as informações do objeto como string
         return "Contas{" +
                 "idConta=" + idConta +
                 ", saldo=" + saldo +
                 ", usuario=" + usuario +
                 '}';
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //hashCode e equals
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Conta)) return false;
-        Conta conta = (Conta) obj;
-        return idConta == conta.idConta && usuario.equals(conta.usuario);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idConta, usuario);
     }
 }
 
