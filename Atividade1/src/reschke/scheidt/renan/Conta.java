@@ -43,7 +43,7 @@ public class Conta {
         Conta destinatario;
         if(this.saldo >= Double.parseDouble(dados[2])){
             this.saldo -= Double.parseDouble(dados[2]);
-            //add saldo ao destino - como?
+            listaDeContas.contas[Integer.parseInt(dados[0])-1].saldo += Double.parseDouble(dados[2]);
             return true;
         } return false;
     }
