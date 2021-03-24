@@ -43,7 +43,7 @@ public class Conta {
         return String.format("%.2f", getSaldo).replace('.', ',');
     }
 
-    public boolean pagar(String qrCode){
+    public boolean pagar(String qrCode){        //Realiza o pagamento a partir de um QRCode
         String[] dados = qrCode.split(";");
         if(this.saldo >= Double.parseDouble(dados[2])){                                                         //Verifica se o saldo do pagador é suficiente para pagar
             if(listaDeContas.getConta(Integer.parseInt(dados[0])).idConta == Integer.parseInt(dados[0])         //Verificação da validade da conta de destino
