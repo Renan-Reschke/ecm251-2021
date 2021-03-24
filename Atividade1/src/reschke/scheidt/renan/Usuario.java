@@ -1,7 +1,6 @@
 /**
  *
  *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
- *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
  *
  */
 
@@ -27,11 +26,11 @@ public class Usuario {
     //Getters
     public String getNome(){        //Retorna o nome do usuário
         return this.nome;
-    }
+    }   //Permite acesso ao nome do usuario
 
     public String getEmail() {      //Retorna o email do Usuário
         return email;
-    }
+    }      //Permite acesso ao email do usuario
 
     @Override
     public String toString() { //Retorna as informações do objeto como string

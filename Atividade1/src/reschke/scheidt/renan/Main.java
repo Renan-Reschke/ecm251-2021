@@ -1,7 +1,6 @@
 /**
  *
  *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
- *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
  *
  */
 
@@ -31,12 +30,12 @@ public class Main {
         System.out.println("Nome usuário: " + c3.getUsuario().getNome() + " - Saldo: " + Conta.formatarSaldo(c3.getSaldo()));
 
         //Operações de teste
-        String QRCode1 = Transacoes.qrCode(c1, 250);
-        c2.pagar(QRCode1);
-        c3.pagar(QRCode1);
-        c2.pagar(QRCode1);
-        String QRCode2 = Transacoes.qrCode(c2, 1000);
-        c3.pagar(QRCode2);
+        String qrCode1 = Transacoes.qrCode(c1, 250);
+        c2.pagar(qrCode1);
+        c3.pagar(qrCode1);
+        c2.pagar(qrCode1);
+        String qrCode2 = Transacoes.qrCode(c2, 1000);
+        c3.pagar(qrCode2);
 
         //Verificação do estado FINAL - OK
         System.out.println("Estado final:");

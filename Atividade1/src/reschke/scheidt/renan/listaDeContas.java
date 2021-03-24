@@ -1,7 +1,6 @@
 /**
  *
  *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
- *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
  *
  */
 
@@ -19,7 +18,7 @@ public class listaDeContas {
     }
 
     //Métodos de classe
-    public static void addConta(Conta conta){
+    public static void addConta(Conta conta){       //Adiciona uma nova conta a lista de contas existentes
         qntContas += 1;
         Conta[] newContas = new Conta[qntContas];   //Cria um array de contas vazio
         for (int i = 0; i < qntContas - 1; i++) {   //Copia as contas do array inicial
@@ -27,5 +26,5 @@ public class listaDeContas {
         }
         newContas[qntContas - 1] = conta;             //Adiciona a conta ao array
         contas = newContas.clone();                 //Substitui o array original, com a conta add
-        }
+        }   //Possivel criacao futura de um metodo que remova a conta, nao necessario no momento
 }

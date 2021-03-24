@@ -1,7 +1,6 @@
 /**
  *
  *  @author 19.02009-0 Renan Scheidt Reschke <renanreschke@hotmail.com>
- *  @author 19.01370-0 Felipe Freitas Villani <felipevillani.2000@hotmail.com>
  *
  */
 
@@ -28,18 +27,19 @@ public class Conta {
     //Getters
     public int getIdConta() {           //Retorna o id da conta
         return idConta;
-    }
+    }       //Permite acesso ao id da conta
 
     public double getSaldo() {          //Retorna o saldo da conta (double)
         return saldo;
-    }
+    }        //Permite acesso ao saldo da conta
 
     public Usuario getUsuario() {      //Retorna o usuário dono da conta
         return usuario;
-    }
+    }   //Permite acesso ao usuario dono da conta
 
     //Métodos de Classe
-    public static String formatarSaldo(double getSaldo) {                           //Formata o sald0 de double para "XXXX,XX"
+    public static String formatarSaldo(double getSaldo) {   //Formata o sald de double para "XXXX,XX"
+
         return String.format("%.2f", getSaldo).replace('.', ',');
     }
 
