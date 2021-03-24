@@ -57,7 +57,7 @@ public class Conta {
 
     @Override
     public String toString() {          //Retorna as informações do objeto como string
-        return "Contas{" +
+        return "Conta{" +
                 "idConta=" + idConta +
                 ", saldo=" + saldo +
                 ", usuario=" + usuario +

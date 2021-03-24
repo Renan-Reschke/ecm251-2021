@@ -34,7 +34,7 @@ public class Usuario {
 
     @Override
     public String toString() { //Retorna as informações do objeto como string
-        return "Usuarios{" +
+        return "Usuario{" +
                 "nome='" + nome + '\'' +
                 ", senha='" + senha + '\'' +
                 ", email='" + email + '\'' +
